@@ -19,7 +19,7 @@ class Client extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'swoole客户端';
 
     /**
      * Create a new command instance.
