@@ -43,7 +43,7 @@ class SwooleUdpServer extends Command
 
         $swooleService = app(SwooleUdpService::class, ['params' => $params]);
 
-        // 启动服务1
+        // 启动服务
         $swooleService->onPacket();
     }
 }

@@ -24,7 +24,7 @@ class MesController extends Controller
 
     public function getMes(Request $request, MesService $mesService)
     {
-        // 接收消息1
+        // 接收消息
         try {
                 return Message::success($mesService->getMes(requestData($request)));
         } catch (\Exception $exception) {

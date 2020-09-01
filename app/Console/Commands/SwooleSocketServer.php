@@ -43,7 +43,7 @@ class SwooleSocketServer extends Command
 
         $swooleService = app(SwooleSocketService::class, ['params' => $params]);
 
-        // 启动服务1
+        // 启动服务
         $swooleService->onMessage();
     }
 }

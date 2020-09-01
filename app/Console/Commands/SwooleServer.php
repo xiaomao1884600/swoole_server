@@ -38,6 +38,7 @@ class SwooleServer extends Command
      */
     public function handle()
     {
+        //
         $params = $this->arguments();
         $params['close'] = $this->option('close');
 
