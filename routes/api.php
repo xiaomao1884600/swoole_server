@@ -17,18 +17,28 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/**
-* 腾讯云oauth2回调地址
-*/
-Route::any('aliyun/auth/call_back', function(Request $request){
-    $content = json_encode($request->all()) . "\n";
-    file_put_contents(public_path('aliyun_auth_call_back.json'), $content, FILE_APPEND);
-    return ['success' => true];
+// test
+Route::any('testp', 'TestController@testp');
+
+Route::group(['namespace' => 'Mes', 'prefix' => 'mes'], function(){
+
+    // 客户端发起信息
+    Route::any('sendMes', 'ClientController@sendMes');
+
+    //获取消息
+    Route::any('getMes', 'MesController@getMes');
+
+    // socket客户端发起信息
+    Route::any('socket_sendMes', 'ClientController@sendSocketMes');
+
+    Route::any('socket_sendUserMes', 'ClientController@sendUserMes');
+
 });
 
-Route::group(['namespace' => 'Record', 'prefix' => 'record'], function(){
+Route::group(['namespace' => 'Redis', 'prefix' => 'redis'], function(){
 
-    //呼出
-    Route::any('call_out', 'RecordController@setCallOut');
+    // 下单
+    Route::any('add_goods', 'OrderController@addGoods');
+    Route::any('kill_order', 'OrderController@makeOrder');
 
 });
