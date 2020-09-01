@@ -45,7 +45,7 @@ class ClientController extends Controller
 
     public function sendUserMes(Request $request, SocketClientService $clientService)
     {
-        // 主动发送消息
+        // 主动发送消息1
         try {
             return $clientService->sendUserMes(requestData($request));
         } catch (\Exception $exception) {

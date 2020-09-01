@@ -46,6 +46,7 @@ class OrderController extends Controller
      */
     public function makeOrder (Request $request, OrderRepository $orderRepository)
     {
+        // 秒杀
         try {
             return Message::success($orderRepository->makeOrder(requestData($request)));
         } catch (\Exception $exception) {

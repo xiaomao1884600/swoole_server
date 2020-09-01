@@ -38,7 +38,7 @@ class Client extends Command
      */
     public function handle(ClientService $clientService)
     {
-        //发送消息
+        //发送消息1
         return $clientService->sendMes();
     }
 }
