@@ -39,4 +39,15 @@ class SocketClientService extends BaseService
         $res = curlRequest($url, $data, 'POST');
         dd($res);
     }
+
+    public function sendGoMes()
+    {
+        $url = 'http://127.0.0.1:9504';
+        $data = [
+            'scene' => '协程',
+        ];
+//        $data = json_encode($data);
+        $res = curlRequest($url, $data, 'POST');
+        dd($res);
+    }
 }

@@ -52,4 +52,14 @@ class ClientController extends Controller
             return ApiExceptions::handle($exception);
         }
     }
+
+    public function sendGoMes(Request $request, SocketClientService $clientService)
+    {
+        // 主动发送消息
+        try {
+            return $clientService->sendGoMes(requestData($request));
+        } catch (\Exception $exception) {
+            return ApiExceptions::handle($exception);
+        }
+    }
 }

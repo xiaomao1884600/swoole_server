@@ -33,6 +33,9 @@ Route::group(['namespace' => 'Mes', 'prefix' => 'mes'], function(){
 
     Route::any('socket_sendUserMes', 'ClientController@sendUserMes');
 
+    // 模拟客户端请求
+    Route::any('socket_sendGoMes', 'ClientController@sendGoMes');
+
 });
 
 Route::group(['namespace' => 'Redis', 'prefix' => 'redis'], function(){
